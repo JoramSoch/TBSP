@@ -1,0 +1,82 @@
+% Partition of the log model evidence into accuracy and complexity
+% _
+% Author: Joram Soch, BCCN Berlin
+% E-Mail: joram.soch@bccn-berlin.de
+% Edited: 02/05/2019, 16:30
+
+
+\setcounter{equation}{0}
+\input{Index}
+
+
+\paragraph{Theorem:}
+
+The log model evidence can be partitioned into accuracy and complexity
+
+\begin{equation} \label{eq:LME}
+\mathrm{LME}(m) = \mathrm{Acc}(m) - \mathrm{Com}(m)
+\end{equation}
+
+where the accuracy term is the posterior expectation of the log-likelihood function
+
+\begin{equation} \label{eq:Acc}
+\mathrm{Acc}(m) = \left\langle p(y|\theta,m) \right\rangle_{p(\theta|y,m)}
+\end{equation}
+
+and the complexity penalty is the Kullback-Leibler divergence of posterior from prior
+
+\begin{equation} \label{eq:Com}
+\mathrm{Com}(m) = \mathrm{KL} \left[ p(\theta|y,m) \, || \, p(\theta|m) \right] \; .
+\end{equation}
+
+
+\paragraph{Proof:} We consider Bayesian inference on data $y$ using model $m$ with parameters $\theta$. Then, Bayes' theorem makes a statement about the posterior distribution, i.e. the probability of parameters, given the data and the model:
+
+\begin{equation} \label{eq:AnC-s1}
+p(\theta|y,m) = \frac{p(y|\theta,m) \, p(\theta|m)}{p(y|m)} \; .
+\end{equation}
+
+Rearranging this for the model evidence, we have:
+
+\begin{equation} \label{eq:AnC-s2}
+p(y|m) = \frac{p(y|\theta,m) \, p(\theta|m)}{p(\theta|y,m)} \; .
+\end{equation}
+
+Logarthmizing both sides of the equation, we obtain:
+
+\begin{equation} \label{eq:AnC-s3}
+\log p(y|m) = \log p(y|\theta,m) - \log \frac{p(\theta|y,m)}{p(\theta|m)} \; .
+\end{equation}
+
+Now taking the expectation over the posterior distribution yields:
+
+\begin{equation} \label{eq:AnC-s4}
+\log p(y|m) = \int p(\theta|y,m) \log p(y|\theta,m) \, \mathrm{d}\theta - \int p(\theta|y,m) \log \frac{p(\theta|y,m)}{p(\theta|m)} \, \mathrm{d}\theta \; .
+\end{equation}
+
+By definition, the left-hand side is the log model evidence and the terms on the right-hand side correspond to the posterior expectation of the log-likelihood function and the Kullback-Leibler divergence of posterior from prior
+
+\begin{equation} \label{eq:LME-AnC}
+\mathrm{LME}(m) = \left\langle p(y|\theta,m) \right\rangle_{p(\theta|y,m)} - \mathrm{KL} \left[ p(\theta|y,m) \, || \, p(\theta|m) \right]
+\end{equation}
+
+which proofs the partition given by (\ref{eq:LME}). \hspace\fill $\blacksquare$
+
+
+\paragraph{Dependencies:}
+\begin{itemize}
+\item Bayes' theorem
+\item derivation of the log model evidence
+\item expectation with respect to a random variable
+\item Kullback-Leibler divergence of two random variables
+\end{itemize}
+
+
+\paragraph{Source:}
+\begin{itemize}
+\item Penny et al. (2007): "Bayesian Comparison of Spatially Regularised General Linear Models". \textit{Human Brain Mapping}, vol. 28, pp. 275–293.
+\item Soch et al. (2016): "How to avoid mismodelling in GLM-based fMRI data analysis: cross-validated Bayesian model selection". \textit{NeuroImage}, vol. 141, pp. 469–489.
+\end{itemize}
+
+
+\paragraph{Index:} number: A003; shortcut: lme-anc; author: JoramSoch; date: 2019/05/02.
