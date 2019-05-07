@@ -13,13 +13,13 @@
 
 Given a linear regression model with independent observations
 
-\begin{equation} \label{eq:mlr}
+\begin{equation} \label{eq:MLR}
 y = X\beta + \varepsilon, \; \varepsilon_i \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N}(0, \sigma^2) \; ,
 \end{equation}
 
 the parameters minimizing the residual sum of squares are given by
 
-\begin{equation} \label{eq:mlr-ols}
+\begin{equation} \label{eq:OLS}
 \hat{\beta} = (X^\mathrm{T} X)^{-1} X^\mathrm{T} y \; .
 \end{equation}
 
@@ -33,7 +33,7 @@ X^\mathrm{T} \hat{\varepsilon} = 0 \; ,
 because if it wasn't, there would be another solution $\tilde{\beta}$ giving another vector $\tilde{\varepsilon}$ with a smaller residual sum of squares. From (\ref{eq:X-e-orth}), the OLS formula can be directly derived:
 
 \vspace{-0.5em}
-\begin{equation} \label{eq:mlr-ols-proof}
+\begin{equation} \label{eq:OLS-proof}
 \begin{split}
 X^\mathrm{T} \hat{\varepsilon} &= 0 \\
 X^\mathrm{T} \left( y - X\hat{\beta} \right) &= 0 \\
@@ -53,4 +53,5 @@ X^\mathrm{T} X\hat{\beta} &= X^\mathrm{T} y \\
 \end{itemize}
 
 
-\paragraph{Index:} number: A002; shortcut: mlr-ols; author: JoramSoch; date: 2019/05/02.
+\input{Meta}
+\Meta{A002}{mlr-ols}{JoramSoch}{2019-05-02}
