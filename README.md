@@ -6,7 +6,7 @@
 – <a href="https://github.com/JoramSoch/TBSP/blob/master/Proofs.pdf">List of Proofs</a>
 – <a href="https://github.com/JoramSoch/TBSP/blob/master/TBSP.pdf">The Book of Statistical Proofs</a> –
 
-This repository contains a demo for an <a href="https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen/Einreichungen/The_Book_of_Statistical_Proofs">envisaged project</a> the core objective of which is to collect as many statistical proofs as possible into a centralized, open and collaboratively edited archive, <b>The Book of Statistical Proofs</b> (TBSP). Goals within this project are (i) to work out a taxonomy of statistical proofs, (ii) to choose an implementation for the proof archive and (iii) to collect statistical proofs from distributed sources.
+This repository contains a demo for an <a href="https://de.wikiversity.org/wiki/Wikiversity:Fellow-Programm_Freies_Wissen/Einreichungen/The_Book_of_Statistical_Proofs">envisaged project</a> the core objective of which is to collect as many statistical proofs as possible into a centralized, open and collaboratively edited archive, named "The Book of Statistical Proofs" (TBSP). Goals within this project are (i) to work out a taxonomy of statistical proofs, (ii) to choose an implementation for the proof archive and (iii) to collect statistical proofs from distributed sources.
 
 TBSP consists of four chapters:
 - Chapter I: General Theorems
