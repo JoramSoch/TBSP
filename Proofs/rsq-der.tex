@@ -1,0 +1,95 @@
+% Derivation of R^2 and adjusted R^2
+% _
+% Author: Joram Soch, BCCN Berlin
+% E-Mail: joram.soch@bccn-berlin.de
+% Edited: 02/05/2019, 15:50
+
+
+\setcounter{equation}{0}
+\input{Index}
+
+
+\paragraph{Theorem:}
+
+Given a linear regression model
+
+\begin{equation} \label{eq:rsq-mlr}
+y = X\beta + \varepsilon, \; \varepsilon_i \overset{\mathrm{i.i.d.}}{\sim} \mathcal{N}(0, \sigma^2)
+\end{equation}
+
+with $n$ independent observations and $p$ independent variables,
+
+1) the coefficient of determination is given by
+
+\begin{equation} \label{eq:R2}
+R^2 = 1 - \frac{\mathrm{RSS}}{\mathrm{TSS}}
+\end{equation}
+
+2) the adjusted coefficient of determination is
+
+\begin{equation} \label{eq:R2-adj}
+R^2_{\mathrm{adj}} = 1 - \frac{\mathrm{RSS}/(n-p)}{\mathrm{TSS}/(n-1)}
+\end{equation}
+
+where the residual and total sum of squares are
+
+\vspace{-0.5em}
+\begin{equation} \label{eq:SS}
+\begin{split}
+\mathrm{RSS} &= \sum_{i=1}^{n} (y_i - \hat{y}_i)^2, \quad \hat{y} = X\hat{\beta} \\
+\mathrm{TSS} &= \sum_{i=1}^{n} (y_i - \bar{y})^2\;, \quad \bar{y} = \frac{1}{n} \sum_{i=1}^n y_i \\
+\end{split}
+\end{equation}
+
+where $X$ is the $n \times p$ design matrix and $\hat{\beta}$ are the ordinary least squares estimates.
+
+
+\paragraph{Proof:} The coefficient of determination $R^2$ is defined as the proportion of the variance explained by the independent variables, relative to the total variance in the data.
+
+\vspace{1em}
+1) If we define the explained sum of squares as
+
+\begin{equation} \label{eq:ESS}
+\mathrm{ESS} = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2 \; ,
+\end{equation}
+
+then $R^2$ is given by
+
+\begin{equation} \label{eq:R2-s1}
+R^2 = \frac{\mathrm{ESS}}{\mathrm{TSS}} \; .
+\end{equation}
+
+which is equal to
+
+\begin{equation} \label{eq:R2-s2}
+R^2 = \frac{\mathrm{TSS}-\mathrm{RSS}}{\mathrm{TSS}} = 1 - \frac{\mathrm{RSS}}{\mathrm{TSS}} \; ,
+\end{equation}
+
+because $\mathrm{TSS} = \mathrm{ESS} + \mathrm{RSS}$. \hspace\fill $\square$
+
+\vspace{1em}
+2) Using (\ref{eq:SS}), the coefficient of determination can be also written as:
+
+\begin{equation} \label{eq:R2'}
+R^2 = 1 - \frac{\sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\sum_{i=1}^{n} (y_i - \bar{y})^2} = 1 - \frac{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\frac{1}{n} \sum_{i=1}^{n} (y_i - \bar{y})^2} \; .
+\end{equation}
+
+If we replace the variance estimates by their unbiased estimators, we obtain
+
+\begin{equation} \label{eq:R2-adj'}
+R^2_{\mathrm{adj}} = 1 - \frac{\frac{1}{n-p} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}{\frac{1}{n-1} \sum_{i=1}^{n} (y_i - \bar{y})^2} = 1 - \frac{\mathrm{RSS}/\mathrm{df}_r}{\mathrm{TSS}/\mathrm{df}_t}
+\end{equation}
+
+where $\mathrm{df}_r = n-p$ and $\mathrm{df}_t = n-1$ are the residual and total degrees of freedom. \hspace\fill $\square$
+
+This gives the adjusted $R^2$ which adjusts $R^2$ for the number of explanatory variables. \hspace\fill $\blacksquare$
+
+
+\paragraph{Source:}
+\begin{itemize}
+\item Wikipedia: "Coefficient of determination"; in: \textit{Wikipedia, the free encyclopedia}; URL: \url{https://en.wikipedia.org/wiki/Coefficient_of_determination#Adjusted_R2}.
+\end{itemize}
+
+
+\input{Meta}
+\Meta{A008}{glm-mle}{JoramSoch}{2019-05-07}
