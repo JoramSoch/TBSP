@@ -1,5 +1,7 @@
 # TBSP
 
+<b>Note: This repository is now obsolete. Please contribute to the <a href="https://github.com/StatProofBook/StatProofBook.github.io">StatProofBook website</a>!</b>
+
 <h3>The Book of Statistical Proofs</h3>
 
 – <a href="https://github.com/JoramSoch/TBSP/blob/master/Contents.pdf">Table of Contents</a>
